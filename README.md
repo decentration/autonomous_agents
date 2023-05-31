@@ -1,6 +1,7 @@
+
 # Autonomous Agents
 
-AI Agents which form into teams and organisations and behave autonomously (human-out-the-loop). This application the enables the interaction of autonomous agents using generative language models (LLMs). An agent includes, an LLM/GPT instance with: dynamic memory retrieval; group planning and schedulin;  and reflection, which weights recency, relevance, and importance. Stored in trees and in a vector database. 
+AI Agents which form into teams and organisations and behave autonomously (human-out-the-loop). This application enables the interaction of autonomous agents using generative language models (LLMs). An agent includes, an LLM/GPT instance with: dynamic memory retrieval; group planning and schedulin;  and reflection, which weights recency, relevance, and importance. Stored in trees and in a vector database. 
 
 ## Table of Contents
 
@@ -26,7 +27,7 @@ AI Agents which form into teams and organisations and behave autonomously (human
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/your_username/autonomous_agents.git
+git clone https://github.com/subchorus/autonomous_agents.git
 ```
 
 2. Change directory to the project folder:
@@ -45,11 +46,15 @@ pip install -r requirements.txt
 
 1. Run the main application:
 ```bash
-python main.py
+python main.py (currently not functioning, just go into tests folder and run tests)
 ```
 
-2. Interact with the agents via the API (refer to the API documentation for more details).
+2. Run tests:
 
+Test Agents in a DAO functionality:
+```bash
+python3 autonomous_agents/agents/tests/test_dao.py
+```
 ## File Structure
 
 ```markdown

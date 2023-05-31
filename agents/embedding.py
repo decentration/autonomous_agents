@@ -1,6 +1,13 @@
 import openai
+import os
+from dotenv import load_dotenv
 
-openai.api_key = "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"
+
+# Load .env file
+load_dotenv()
+
+# Get API key from environment variables
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 
 def get_embedding(text, model="text-embedding-ada-002"):

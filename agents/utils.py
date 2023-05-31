@@ -4,19 +4,16 @@ from autonomous_agents.agents.memory import Memory, Reflection
 from autonomous_agents.agents.embedding import get_embedding
 import openai
 import os
-# from dotenv import load_dotenv
-# from pathlib import Path
 
-# dotenv_path = Path("..") / ".env"
-# print(f"Loading dotenv from: {dotenv_path.resolve()}")
+from dotenv import load_dotenv
 
-# load_dotenv(dotenv_path=dotenv_path)
 
-# openai.api_key = os.getenv("OPENAI_API_KEY")
-# print(f"API key: {openai.api_key}")
+# Load .env file
+load_dotenv()
 
-openai.organization = "org-OeCGTXjyKYQoVaMAL5UnIHXk"
-openai.api_key = "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"
+# Get API key from environment variables
+openai.api_key = os.getenv("OPENAI_API_KEY")
+openai.api_organization = os.getenv("OPENAI_ORGANIZATION")
 
 
 def decay_function(time_elapsed):
