@@ -1,0 +1,7 @@
+{
+    "id": "unique_id",
+    "type": "observation/plan/reflection/ideal",
+    "content": "text_content",
+    "importance": 0-10,
+    "timestamp": "ISO_date_time_string"
+  }

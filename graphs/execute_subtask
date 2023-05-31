@@ -1,0 +1,10 @@
+digraph Execute_SubTask {
+	rankdir=TB ratio=compress size="8,5"
+	1 [label="Start Sub-Task" fillcolor=orange shape=diamond style=filled]
+	2 [label="Perform Work" fillcolor=orange shape=diamond style=filled]
+	3 [label="Monitor Progress" fillcolor=orange shape=diamond style=filled]
+	4 [label="Adjust as Needed" fillcolor=orange shape=diamond style=filled]
+	1 -> 2
+	2 -> 3
+	3 -> 4
+}

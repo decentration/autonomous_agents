@@ -1,0 +1,10 @@
+digraph Delegate_and_Assign_Tasks {
+	rankdir=TB ratio=compress size="8,5"
+	1 [label="Identify Team Members" fillcolor=yellow shape=parallelogram style=filled]
+	2 [label="Assess Skills & Availability" fillcolor=yellow shape=parallelogram style=filled]
+	3 [label="Assign Tasks" fillcolor=yellow shape=parallelogram style=filled]
+	4 [label="Communicate Expectations" fillcolor=yellow shape=parallelogram style=filled]
+	1 -> 2
+	2 -> 3
+	3 -> 4
+}

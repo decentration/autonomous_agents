@@ -1,0 +1,61 @@
+{
+    "type": "object",
+    "properties": {
+      "messages": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "content": {
+              "type": "object",
+              "properties": {
+                "file_name": {
+                  "type": "string",
+                  "description": "The name of the file to be created or updated."
+                },
+                "code": {
+                  "type": "string",
+                  "description": "The code content to be added to the file."
+                },
+                "description": {
+                  "type": "string",
+                  "description": "A brief explanation of the code's purpose and functionality."
+                },
+                "tags": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "description": "A list of tags to help categorize and search for the code."
+                },
+                "unit_tests": {
+                  "type": "string",
+                  "description": "Unit test code or a reference to unit test files for the code snippet."
+                },
+                "is_new_file": {
+                  "type": "boolean",
+                  "description": "Indicates whether this is a new file or an existing file. If true, a new file will be created; if false, the code will be appended to an existing file."
+                },
+                "known_location": {
+                  "type": "boolean",
+                  "description": "Indicates whether the file location is known. If true, the file will be created or updated at the specified location; if false, a default location will be used."
+                },
+                "location": {
+                  "type": "string",
+                  "description": "The file path where the file should be created or updated. This will be used if 'knownlocation' is true."
+                },
+                "format": {
+                  "type": "string",
+                  "description": "The format of the file. For example '.js', '.rs', '.tsx', '.json', '.toml', etc."
+                }
+              },
+              "required": [
+                "file_name",
+                "code"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }

@@ -1,0 +1,46 @@
+from graphviz import Digraph
+
+dot = Digraph('Improved_MVP_Workflow')
+dot.attr(rankdir='TB', size='8,10', ratio='compress')
+
+# Nodes with different shapes and colors
+dot.node('A', 'Plan Idea', shape='ellipse', style='filled', fillcolor='lightblue')
+dot.node('B', 'Create & Prioritize Goals', shape='box', style='filled', fillcolor='lightgreen', URL='./graphs/create_prioritize_goals.gv.pdf')
+dot.node('C', 'Create &\nPrioritize Tasks', shape='box', style='filled', fillcolor='lightgreen', URL='./graphs/create_prioritize_tasks.gv.pdf')
+dot.node('D', 'Delegate &\nAssign Tasks', shape='parallelogram', style='filled', fillcolor='yellow', URL='./graphs/delegate_assign_tasks.gv.pdf')
+dot.node('E', 'Create &\nPrioritize Sub-Tasks', shape='box', style='filled', fillcolor='lightgreen', URL='./graphs/create_prioritize_subtasks.gv.pdf')
+dot.node('F', 'Delegate &\nAssign Sub-Tasks', shape='parallelogram', style='filled', fillcolor='yellow', URL='./graphs/delegate_assign_subtasks.gv.pdf')
+dot.node('G', 'Execute Sub-Task', shape='diamond', style='filled', fillcolor='orange', URL='./graphs/execute_subtask.gv.pdf')
+dot.node('H', 'Check and\nTest for Success', shape='diamond', style='filled', fillcolor='orange', URL='./graphs/check_test_success.gv.pdf')
+dot.node('I', 'Is Sub-Task Successful?', shape='diamond', style='filled', fillcolor='orange')
+dot.node('J', 'Proceed to Next Sub-Task', shape='circle', style='filled', fillcolor='gray')
+dot.node('K', 'Reattempt/Adjust Sub-Task', shape='circle', style='filled', fillcolor='gray')
+dot.node('L', 'Are All Sub-Tasks Completed?', shape='diamond', style='filled', fillcolor='orange')
+dot.node('M', 'Proceed to Next Task', shape='circle', style='filled', fillcolor='gray')
+dot.node('N', 'Update Goal Progress', shape='parallelogram', style='filled', fillcolor='yellow')
+dot.node('O', 'Are All Goals Achieved?', shape='diamond', style='filled', fillcolor='orange')
+dot.node('P', 'Project Completed', shape='doublecircle', style='filled', fillcolor='lightblue')
+dot.node('Q', 'Periodic Review & Adjustments', shape='hexagon', style='filled', fillcolor='purple')
+dot.node('R', 'Reevaluate & Adjust Goals/Tasks', shape='hexagon', style='filled', fillcolor='purple')
+dot.node('S', 'Any Remaining Tasks?', shape='diamond', style='filled', fillcolor='lightblue')
+
+# Edges
+dot.edges(['AB', 'BC', 'CD', 'DE', 'EF', 'FG', 'GH', 'HI'])
+dot.edge('I', 'J', label='Yes')
+dot.edge('I', 'K', label='No')
+dot.edge('J', 'L')
+dot.edge('K', 'L')
+dot.edge('L', 'F', label='No')
+dot.edge('L', 'M', label='No')
+dot.edge('N', 'O')
+dot.edge('O', 'P', label='Yes')
+dot.edge('O', 'R', label='No')
+dot.edge('R', 'B')
+dot.edge('P', 'Q', label='Periodic Review')
+dot.edge('Q', 'R', label='Adjustments')
+dot.edge('L', 'S', label='Yes')
+dot.edge('S', 'A', label='No')
+dot.edge('S', 'D', label='Yes')
+
+
+dot.render('improved_mvp_workflow', view=True, format='png')

@@ -1,0 +1,5 @@
+{
+    "type": "observation/plan/reflection/ideal",
+    "content": "text_content",
+    "importance": "integer between 0 - 10"
+}
