@@ -1,7 +1,8 @@
 import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
-from autonomous_agents.agents.memory import Memory, Reflection
-from autonomous_agents.agents.embedding import get_embedding
+from agents.Memory.memory import Memory
+from agents.Thought.thought import Reflection
+from agents.embedding import get_embedding
 import openai
 import os
 

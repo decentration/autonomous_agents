@@ -1,5 +1,8 @@
+# memory_database.py
 import sqlite3
 import numpy as np
+
+from memory import Memory
 
 class MemoryDatabase:
     def __init__(self, db_name='memory_database.db'):

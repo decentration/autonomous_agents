@@ -6,5 +6,4 @@
 
 1. [Tree of Thoughts: Deliberate Problem Solving with Large Language Models](https://arxiv.org/pdf/2305.10601.pdf)
 
-
-
+1. [Agent Chain](https://github.com/HeyCLI/AgentChain/blob/main/AOP_short.pdf)

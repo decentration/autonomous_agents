@@ -1,0 +1,54 @@
+==== ./thought_stream.py ====
+import uuid
+from datetime import timezone, datetime
+from ..convert_timestamp import convert_to_utc_timestamp
+
+class ThoughtStream:
+    def __init__(self):
+        self.thoughts = []
+
+    def add_thought(self, thought):
+        self.thoughts.append(thought)
+
+    def get_thought_by_id(self, thought_id):
+        for thought in self.thoughts:
+            if thought.id == thought_id:
+                return thought
+        return None
+
+    def get_thoughts_by_type(self, thought_type):
+        return [thought for thought in self.thoughts if thought.type == thought_type]
+
+    def get_latest_thoughts(self, limit=10):
+        return self.thoughts[-limit:]
+==== ./__init__.py ====
+==== ./thought.py ====
+import uuid
+from ..embedding import get_embedding
+from datetime import timezone, datetime
+from ..convert_timestamp import convert_to_utc_timestamp
+
+class Thought:
+    count = 0
+
+    def __init__(self, thought_type, content, timestamp):
+        self.id = str(uuid.uuid4())
+        self.number = Thought.count
+        Thought.count += 1
+
+        self.type = thought_type
+        self.content = content
+        self.timestamp = timestamp
+        self.embedding = get_embedding(content)
+        self.symbol = "💭"
+
+class Reflection(Thought):
+    def __init__(self, content, timestamp, memories_used, reflections_used):
+        super().__init__("reflection", content, timestamp)
+        self.memories_used = memories_used  # List of memory instances used for this reflection
+        self.reflections_used = reflections_used  # List of reflection instances used for this reflection
+        self.symbol = "💭🪞"
+
+    def generate_reflection(self):
+        # This method would include the logic for generating a reflection using the specified memories and reflections.
+        pass

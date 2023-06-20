@@ -1,14 +1,14 @@
 import uuid
 import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
-from .embedding import get_embedding
+from ..embedding import get_embedding
 import numpy as np
 from datetime import datetime, timezone
-from .memory import Reflection
+from ..Thought.thought import Reflection
 from tabulate import tabulate
 from annoy import AnnoyIndex
-from .agent_api_communication import APICommunication
-from tasks.task_manager import AgileTaskManager, TeamTaskManager, OrganizationTaskManager
+from ..agent_api_communication import APICommunication
+from Tasks.task_manager import AgileTaskManager, TeamTaskManager, OrganizationTaskManager
 from .memory import Plan
 
 class MemoryStream:

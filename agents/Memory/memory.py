@@ -1,7 +1,7 @@
 import uuid
-from .embedding import get_embedding
+from ..embedding import get_embedding
 from datetime import timezone, datetime
-from .convert_timestamp import convert_to_utc_timestamp
+from ..convert_timestamp import convert_to_utc_timestamp
 
 class Memory:
 
@@ -46,11 +46,12 @@ class Ideal(Memory):
         super(Ideal, self).__init__("ideal", content, importance, timestamp_dt)
         self.symbol = "🧠💡"
 
-class Reflection(Memory):
-    def __init__(self, content, importance, timestamp, evidence):
-        timestamp_dt = convert_to_utc_timestamp(timestamp)
-        super(Reflection, self).__init__("reflection", content, importance, timestamp_dt)
-        self.symbol = "🧠🪞"
-        self.evidence = evidence
+"""REFLECTION IS MOVED TO THOUGHT"""
+# class Reflection(Memory): 
+#     def __init__(self, content, importance, timestamp, evidence):
+#         timestamp_dt = convert_to_utc_timestamp(timestamp)
+#         super(Reflection, self).__init__("reflection", content, importance, timestamp_dt)
+#         self.symbol = "🧠🪞"
+#         self.evidence = evidence
 
         

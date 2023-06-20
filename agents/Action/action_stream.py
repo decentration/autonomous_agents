@@ -1,11 +1,11 @@
 import uuid
 import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
-from .embedding import get_embedding  # If you're embedding actions
+from ..embedding import get_embedding  # If you're embedding actions
 from datetime import datetime, timezone
-from .action import TaskAction, CommunicationAction, DecisionAction  # Import the Action subclasses
+from .action import Strategic, Operational, Management, Communication, Development  # Import the Action subclasses
 from annoy import AnnoyIndex  # If you're using approximate nearest neighbor search
-from .agent_api_communication import APICommunication  # If actions also communicate with an API
+from ..agent_api_communication import APICommunication  # If actions also communicate with an API
 
 
 class ActionStream:

@@ -1,6 +1,6 @@
 from agents.autonomous_agent import AutonomousAgent
-from agents.memory import MemoryStream, ReflectionTree, TreeNode
-from utils import calculate_importance_sum, generate_reflection
+from agents.Memory.memory import MemoryStream, ReflectionTree, TreeNode
+from .utils import calculate_importance_sum, generate_reflection
 
 class AgentBehavior:
     def __init__(self, agent):

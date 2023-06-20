@@ -1,7 +1,8 @@
-from autonomous_agents.agents.memory_stream import MemoryStream
-from autonomous_agents.agents.memory import Memory, Observation, Plan, Ideal, Reflection
+from agents.Memory.memory_stream import MemoryStream
+from agents.Memory.memory import Memory, Observation, Plan, Ideal
+from agents.Thought.thought import Reflection
 from datetime import datetime, timezone, timedelta
-from autonomous_agents.agents.utils import print_memory_item, ConsoleColor
+from agents.utils import print_memory_item, ConsoleColor
 
 
 
