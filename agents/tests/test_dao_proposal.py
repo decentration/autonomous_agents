@@ -95,7 +95,7 @@ for memory in retrieved_memories2:
     print_memory_item(memory)
     # print(f"Query 2:", memory.symbol, memory.timestamp, memory.type, ConsoleColor.GREEN, "importance:",  memory.importance, ConsoleColor.RESET, memory.content)
 
-# Test with a query about Klaus's research and a specific timeframe (e.g., the last hour)
+# Test with a query about Alice's work
 query3 = " ☝️ What happened in Alice work in the last hour?"
 print(query3)
 retrieved_memories3 = memory_stream.retrieve_memory(query3, datetime.now(timezone.utc))
