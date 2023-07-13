@@ -1,6 +1,5 @@
 import uuid
-from datetime import timezone, datetime
-from ..convert_timestamp import convert_to_utc_timestamp  
+import openai
 
 class Action:
     def __init__(self, action_type, content, timestamp, associated_task):
@@ -10,6 +9,12 @@ class Action:
         self.timestamp = timestamp
         self.associated_task = associated_task
         self.symbol = "🎬"
+        self.embedding = self.get_embedding(content)  # Call get_embedding method to generate embedding
+
+    def get_embedding(self, text, model="text-embedding-ada-002"):
+        # The text is cleaned to remove newline characters and the embedding is returned
+        text = text.replace("\n", " ")
+        return openai.Embedding.create(input = [text], model=model)['data'][0]['embedding']
 
     def execute(self):
         raise NotImplementedError
@@ -23,6 +28,7 @@ class Operational(Action):
     def __init__(self, content, timestamp, associated_task, operations):
         super().__init__("operational", content, timestamp, associated_task)
         self.operations = operations  # the operations this action is part of
+
 
 class Management(Action):
     def __init__(self, content, timestamp, associated_task, management):
